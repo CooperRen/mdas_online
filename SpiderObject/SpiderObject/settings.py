@@ -44,6 +44,8 @@ ROBOTSTXT_OBEY = True
 #   'Accept-Language': 'en',
 #}
 
+FILES_STORE = './scrapyFile'
+
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
@@ -66,7 +68,18 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    #'SpiderObject.pipelines.SpiderobjectPipeline': 300,
-    'SpiderObject.pipelines.TextPipeline':300,
+    'SpiderObject.pipelines.MyfilesPipeline': 300,
+    'SpiderObject.pipelines.TextPipeline': 310,
+    'SpiderObject.pipelines.stcnPipeline': 320,
+    'SpiderObject.pipelines.SimuPipeline': 330,
+    'SpiderObject.pipelines.Simu100Pipeline': 340,
+    'SpiderObject.pipelines.SimujijinPipeline': 350,
+    'SpiderObject.pipelines.ZsxiazaiPipeline': 360,
+    'SpiderObject.pipelines.CnstockPipeline': 370,
+    'SpiderObject.pipelines.detailPipeline': 380,
+    'SpiderObject.pipelines.pbdetailPipeline': 390,
+
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,3 +102,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+COMMANDS_MODULE = 'SpiderObject.commands'
